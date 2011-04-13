@@ -8,6 +8,12 @@ require_relative 'factories'
 
 require_relative '../rstatus'
 
+config = YAML.load_file('config/config.yml')[ENV['RACK_ENV']]
+
+config.each do |key, value|
+  ENV[key] = value
+end
+
 module TestHelper
   def app() Rstatus end
 
