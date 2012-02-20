@@ -50,6 +50,9 @@ group :development, :test do
   gem "vcr"
   gem "simplecov", "~> 0.4.0", :require => false
   gem "launchy"
+  gem "guard"
+  gem "rb-inotify" if RbConfig::CONFIG["target_os"] == "linux" # Enabled file system event watching
+  gem "guard-minitest"
 end
 
 group :test do
