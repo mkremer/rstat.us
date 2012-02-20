@@ -4,7 +4,8 @@ require_relative '../test_helper'
 describe Notifier do
   include TestHelper
 
-  before do
+  def setup
+    super
     Pony.deliveries.clear
   end
 

@@ -7,7 +7,8 @@ class Feed
 end
 
 describe "finding or creating a new feed" do
-  before do
+  def setup
+    super
     @feed = Feed.new
     @subscriber_id = "id"
   end
@@ -24,9 +25,10 @@ describe "finding or creating a new feed" do
 
   describe "when feed does not have the subscriber id" do
 
-    before do
+    def setup
+      super
       Feed.expects(:first).with(:id => @subscriber_id).returns(nil)
-      
+
       @feed_url = "http://some.url"
       @feed_data = FeedData.new(@feed_url, nil)
 
@@ -34,7 +36,7 @@ describe "finding or creating a new feed" do
         .with(@subscriber_id)
         .returns(@feed_data)
     end
-    
+
     describe "when a feed exists with the remote url" do
       it "should return the feed with the remote url " do
         Feed.expects(:first).with(:remote_url => @feed_url).returns(@feed)

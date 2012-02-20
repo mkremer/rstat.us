@@ -2,7 +2,8 @@ require_relative '../test_helper'
 
 describe Authorization do
   include TestHelper
-  before do
+  def setup
+    super
     @u = Fabricate(:user)
   end
 

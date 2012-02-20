@@ -175,7 +175,8 @@ describe User do
 
   describe "following" do
     describe "local users" do
-      before do
+      def setup
+        super
         @u = Fabricate(:user)
         @u2 = Fabricate(:user)
       end
@@ -281,7 +282,8 @@ describe User do
   end
 
   describe "self#find_by_case_insensitive_username" do
-    before do
+    def setup
+      super
       @u = Fabricate(:user, :username => "oMg")
     end
 

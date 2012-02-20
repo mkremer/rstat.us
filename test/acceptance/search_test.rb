@@ -4,7 +4,8 @@ require_relative 'acceptance_helper'
 describe "search" do
   include AcceptanceHelper
 
-  before do
+  def setup
+    super
     @update_text = "These aren't the droids you're looking for!"
     Fabricate(:update, :text => @update_text)
   end

@@ -18,7 +18,8 @@ describe "following" do
   end
 
   describe "other sites" do
-    before do
+    def setup
+      super
       log_in_as_some_user
       visit "/"
       click_link "Follow Remote User"
@@ -161,7 +162,8 @@ describe "following" do
     end
 
     describe "pagination" do
-      before do
+      def setup
+        super
         log_in_as_some_user
 
         5.times do
@@ -254,7 +256,8 @@ describe "following" do
     end
 
     describe "pagination" do
-      before do
+      def setup
+        super
         log_in_as_some_user
 
         5.times do

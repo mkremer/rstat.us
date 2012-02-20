@@ -2,7 +2,8 @@ require_relative '../test_helper'
 
 describe Author do
   include TestHelper
-  before do
+  def setup
+    super
     @author = Fabricate :author, :username => "james", :email => nil, :image_url => nil, :created_at => 3.days.ago
   end
 
@@ -48,7 +49,8 @@ describe Author do
   end
 
   describe "Author#search" do
-    before do
+    def setup
+      super
       Fabricate :author, :username => "hipster", :email => nil, :image_url => nil
     end
 

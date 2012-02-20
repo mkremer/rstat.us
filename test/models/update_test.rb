@@ -34,7 +34,8 @@ describe Update do
     end
 
     describe "existing user" do
-      before do
+      def setup
+        super
         Fabricate(:user, :username => "steveklabnik")
       end
 
@@ -68,7 +69,8 @@ describe Update do
     end
 
     describe "existing user mentioned in the middle of the word" do
-      before do
+      def setup
+        super
         Fabricate(:user, :username => "steveklabnik")
         Fabricate(:user, :username => "bar")
       end

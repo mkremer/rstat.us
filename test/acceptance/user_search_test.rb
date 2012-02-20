@@ -4,7 +4,8 @@ require_relative 'acceptance_helper'
 describe "user search" do
   include AcceptanceHelper
 
-  before do
+  def setup
+    super
     zebra = Fabricate(:user, :username => "zebra")
   end
 

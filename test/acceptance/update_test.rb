@@ -120,7 +120,8 @@ describe "update" do
   end
 
   describe "destroy" do
-    before do
+    def setup
+      super
       log_in_as_some_user
 
       @u.feed.updates << Fabricate(:update, :author => @u.author)
@@ -152,7 +153,8 @@ describe "update" do
   end
 
   describe "reply and share links for each update" do
-    before do
+    def setup
+      super
       log_in_as_some_user
 
       @u2 = Fabricate(:user)
@@ -241,7 +243,8 @@ describe "update" do
   end
 
   describe "no update messages" do
-    before do
+    def setup
+      super
       log_in_as_some_user
     end
 
@@ -262,7 +265,8 @@ describe "update" do
   end
 
   describe "timeline" do
-    before do
+    def setup
+      super
       log_in_as_some_user
     end
 
@@ -294,7 +298,8 @@ describe "update" do
   end
 
   describe "world" do
-    before do
+    def setup
+      super
       log_in_as_some_user
     end
 

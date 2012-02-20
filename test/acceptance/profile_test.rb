@@ -51,7 +51,8 @@ describe "profile" do
   end
 
   describe "updating" do
-    before do
+    def setup
+      super
       Pony.deliveries.clear
       log_in_as_some_user
     end
